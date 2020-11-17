@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Eddy</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body class="multiple-scenes ">
+
+<div id="pano"></div>
+
+<div class="overlay">
+  <h1 class="introText">HUMAN</h1>
+  <h1 class="introText2">EX</h1>
+  <h1 class="introText3">MACHINA</h1>
+  <button class="introButton" id="introButton" onclick="fadeOut()">ENTER</button>
+</div>
+
+<div style="visibility: hidden" id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-pano1">
+        <li class="text">pano1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-pano2">
+        <li class="text">pano2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-pano3">
+        <li class="text">pano3</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-pano4">
+        <li class="text">pano4</li>
+      </a>
+    
+  </ul>
+</div>
+
+<!-- 
+
+  <div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div> 
+
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+-->
+
+<a href="javascript:void(0)" style="visibility: hidden" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" style="visibility: hidden" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script>
+  const fadeOut = () => {
+    console.log("fading...");
+
+    const pano = document.querySelector("#pano");
+    pano.classList.add("full-grey");
+
+    gsap.to(".introButton",{
+      duration: 1,
+      y: -100,
+      opacity: 0,
+      ease: "power1.inOut"
+      //onComplete: hideButton
+    });
+
+    gsap.to(".introText",{
+      duration: 2,
+      y: -400,
+      opacity: 0,
+      ease: "power1.inOut",
+      delay: 1
+    });
+
+    gsap.to(".introText2",{
+      duration: 2,
+      y: -400,
+      opacity: 0,
+      ease: "power1.inOut",
+      delay: 1.2
+    });
+
+    gsap.to(".introText3",{
+      duration: 2,
+      y: -400,
+      opacity: 0,
+      ease: "power1.inOut",
+      delay: 1.4
+    });
+
+    gsap.from(".overlay",{
+      duration: 1.5,
+      ease: "power2.inOut"
+    });
+
+    gsap.to(".overlay",{
+      duration: 3,
+      delay: 2.5,
+      top: "-110%",
+      ease: "expo.inOut"
+    })
+
+  }
+</script>
+
+<script src="vendor/es5-shim.js"></script>
+<script src="vendor/eventShim.js"></script>
+<script src="vendor/classList.js"></script>
+<script src="vendor/requestAnimationFrame.js" ></script>
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
