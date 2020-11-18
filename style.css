@@ -945,3 +945,18 @@ body.view-control-buttons .viewControlButton {
 .hidden {
   display: none;
 }
+
+@media (max-width: 768px) {
+
+  .introText {
+    font-size: 3em;
+  }
+
+  .introText2 {
+    font-size: 3em;
+  }
+
+  .introText3 {
+    font-size: 3em;
+  }
+}
